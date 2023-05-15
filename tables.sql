@@ -1,39 +1,17 @@
 
-CREATE TABLE employee_role (
-	role_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
-	role_name TEXT NOT NULL
-);
-
-CREATE TABLE product_category (
-	category_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
-	category_name TEXT NOT NULL
-);
-
 CREATE TABLE employee (
 	employee_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
 	first_name TEXT NOT NULL,
 	last_name TEXT NOT NULL,
-	role_id INTEGER NOT NULL,
+	role TEXT NOT NULL,
 	phone TEXT UNIQUE NOT NULL,
 	email TEXT UNIQUE NOT NULL,
 	address TEXT NOT NULL,
 	state TEXT NOT NULL,
 	city TEXT NOT NULL,
-	hire_date TEXT NOT NULL,
-	FOREIGN KEY(role_id)
-		REFERENCES employee_role(role_id)
+	hire_date TEXT NOT NULL
 );
 
-CREATE TABLE product (
-	product_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
-	name TEXT NOT NULL,
-	description TEXT NOT NULL,
-	unit_price TEXT NOT NULL,
-	stock_quantity TEXT NOT NULL,
-	category_id INTEGER NOT NULL,
-	FOREIGN KEY(category_id)
-		REFERENCES product_category(category_id)
-);
 
 CREATE TABLE customer (
 	customer_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
@@ -44,6 +22,16 @@ CREATE TABLE customer (
 	address TEXT NOT NULL,
 	state TEXT NOT NULL,
 	city TEXT NOT NULL
+);
+
+CREATE TABLE product (
+	product_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
+	name TEXT NOT NULL,
+	description TEXT NOT NULL,
+	unit_price TEXT NOT NULL,
+	sale_price TEXT NOT NULL,
+	stock_quantity TEXT NOT NULL,
+	category TEXT NOT NULL
 );
 
 CREATE TABLE supplier (
@@ -58,9 +46,9 @@ CREATE TABLE supplier (
 
 CREATE TABLE supply_order (
 	order_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
+	supplier_id INTEGER NOT NULL,
 	order_date TEXT NOT NULL,
 	shipment_date TEXT NOT NULL,
-	supplier_id INTEGER NOT NULL,
 	FOREIGN KEY(supplier_id)
 		REFERENCES supplier(supplier_id)
 );
@@ -78,9 +66,9 @@ CREATE TABLE supply_order_product (
 
 CREATE TABLE customer_order (
 	order_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
+	customer_id INTEGER NOT NULL,
 	order_date TEXT NOT NULL,
 	shipment_date TEXT NOT NULL,
-	customer_id INTEGER NOT NULL,
 	FOREIGN KEY(customer_id)
 		REFERENCES customer(customer_id)
 );
