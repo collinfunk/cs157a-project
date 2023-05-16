@@ -1,0 +1,140 @@
+﻿INSERT INTO employee_role (role_id, role_name, wage)
+VALUES 
+(1, 'Manager', 30.00),
+(2, 'Assistant Manager', 25.00),
+(3, 'Sales Associate', 20.00),
+(4, 'Cashier', 15.00),
+(5, 'Stock Clerk', 12.00);
+
+
+INSERT INTO employee (employee_id, first_name, last_name, role, phone, email, address, state, city, hire_date)
+VALUES 
+(1, 'John', 'Doe', 'Manager', '123-456-7890', 'john.doe@example.com', '123 Main St', 'CA', 'Los Angeles', '2023-01-01'),
+(2, 'Jane', 'Smith', 'Cashier', '987-654-3210', 'jane.smith@example.com', '456 Elm St', 'CA', 'San Francisco', '2023-01-15'),
+(3, 'James', 'Brown', 'Stock Clerk', '321-654-9870', 'james.brown@example.com', '789 Pine St', 'NY', 'New York', '2023-02-01'),
+(4, 'Emily', 'Johnson', 'Sales Associate', '654-321-0987', 'emily.johnson@example.com', '102 Oak St', 'TX', 'Austin', '2023-02-15'),
+(5, 'Robert', 'Miller', 'Assistant Manager', '098-765-4321', 'robert.miller@example.com', '345 Birch St', 'WA', 'Seattle', '2023-03-01');
+
+
+INSERT INTO customer (customer_id, first_name, last_name, phone, email, address, state, city)
+VALUES 
+(1, 'Alice', 'Williams', '123-456-7891', 'alice.williams@example.com', '678 Maple St', 'CA', 'Los Angeles'),
+(2, 'David', 'Jones', '987-654-3211', 'david.jones@example.com', '901 Elm St', 'NY', 'New York'),
+(3, 'Mary', 'Taylor', '321-654-9871', 'mary.taylor@example.com', '234 Pine St', 'TX', 'Austin'),
+(4, 'Michael', 'Thomas', '654-321-0988', 'michael.thomas@example.com', '567 Oak St', 'WA', 'Seattle'),
+(5, 'Sarah', 'Moore', '098-765-4322', 'sarah.moore@example.com', '890 Birch St', 'FL', 'Miami');
+
+
+INSERT INTO product (product_id, name, description, sale_price, category)
+VALUES 
+(1, 'Toaster', 'A 2 slice toaster', '30.00', 'Kitchen'),
+(2, 'Shampoo', '500ml all-natural shampoo', '10.00', 'Bathroom'),
+(3, 'Running Shoes', 'Size 10 running shoes', '50.00', 'Footwear'),
+(4, 'Cotton T-shirt', 'Medium cotton T-shirt', '20.00', 'Clothing'),
+(5, 'LED TV', '50 inch LED TV', '400.00', 'Electronics');
+
+
+INSERT INTO supplier (supplier_id, name, phone, email, address, state, city)
+VALUES 
+(1, 'Acme Inc.', '123-456-7892', 'acme@example.com', '123 Corporate St', 'CA', 'Los Angeles'),
+(2, 'Globex Corp.', '987-654-3212', 'globex@example.com', '456 Corporate St', 'NY', 'New York'),
+(3, 'Soylent Corp.', '321-654-9872', 'soylent@example.com', '789 Corporate St', 'TX', 'Austin'),
+(4, 'Initech Corp.', '654-321-0989', 'initech@example.com', '102 Corporate St', 'WA', 'Seattle'),
+(5, 'Umbrella Corp.', '098-765-4323', 'umbrella@example.com', '345 Corporate St', 'FL', 'Miami');
+
+
+
+
+
+
+INSERT INTO supply_order (order_id, supplier_id, order_date, shipment_date)
+VALUES
+(1, 1, '2023-04-01', '2023-04-05'),
+(2, 2, '2023-04-10', '2023-04-15'),
+(3, 3, '2023-04-20', '2023-04-25'),
+(4, 4, '2023-04-30', '2023-05-05'),
+(5, 5, '2023-05-10', '2023-05-15');
+
+
+INSERT INTO supply_order_product (order_id, product_id, order_price, item_count, item_price)
+VALUES
+(1, 1, 25.00, 100, 2.50),
+(2, 2, 8.00, 200, 0.04),
+(3, 3, 40.00, 50, 0.80),
+(4, 4, 15.00, 150, 0.10),
+(5, 5, 350.00, 20, 17.50);
+
+
+
+
+INSERT INTO employee (employee_id, first_name, last_name, role, phone, email, address, state, city, hire_date)
+VALUES 
+(1, 'John', 'Doe', 'Manager', '123-456-7890', 'john.doe@example.com', '123 Main St', 'CA', 'Los Angeles', '2023-01-01'),
+(2, 'Jane', 'Smith', 'Cashier', '987-654-3210', 'jane.smith@example.com', '456 Elm St', 'CA', 'San Francisco', '2023-01-15'),
+(3, 'James', 'Brown', 'Stock Clerk', '321-654-9870', 'james.brown@example.com', '789 Pine St', 'NY', 'New York', '2023-02-01'),
+(4, 'Emily', 'Johnson', 'Sales Associate', '654-321-0987', 'emily.johnson@example.com', '102 Oak St', 'TX', 'Austin', '2023-02-15'),
+(5, 'Robert', 'Miller', 'Assistant Manager', '098-765-4321', 'robert.miller@example.com', '345 Birch St', 'WA', 'Seattle', '2023-03-01');
+
+
+INSERT INTO customer (customer_id, first_name, last_name, phone, email, address, state, city)
+VALUES 
+(1, 'Alice', 'Williams', '123-456-7891', 'alice.williams@example.com', '678 Maple St', 'CA', 'Los Angeles'),
+(2, 'David', 'Jones', '987-654-3211', 'david.jones@example.com', '901 Elm St', 'NY', 'New York'),
+(3, 'Mary', 'Taylor', '321-654-9871', 'mary.taylor@example.com', '234 Pine St', 'TX', 'Austin'),
+(4, 'Michael', 'Thomas', '654-321-0988', 'michael.thomas@example.com', '567 Oak St', 'WA', 'Seattle'),
+(5, 'Sarah', 'Moore', '098-765-4322', 'sarah.moore@example.com', '890 Birch St', 'FL', 'Miami');
+
+
+INSERT INTO product (product_id, name, description, sale_price, category)
+VALUES 
+(1, 'Toaster', 'A 2 slice toaster', '30.00', 'Kitchen'),
+(2, 'Shampoo', '500ml all-natural shampoo', '10.00', 'Bathroom'),
+(3, 'Running Shoes', 'Size 10 running shoes', '50.00', 'Footwear'),
+(4, 'Cotton T-shirt', 'Medium cotton T-shirt', '20.00', 'Clothing'),
+(5, 'LED TV', '50 inch LED TV', '400.00', 'Electronics');
+
+
+INSERT INTO supplier (supplier_id, name, phone, email, address, state, city)
+VALUES 
+(1, 'Acme Inc.', '123-456-7892', 'acme@example.com', '123 Corporate St', 'CA', 'Los Angeles'),
+(2, 'Globex Corp.', '987-654-3212', 'globex@example.com', '456 Corporate St', 'NY', 'New York'),
+(3, 'Soylent Corp.', '321-654-9872', 'soylent@example.com', '789 Corporate St', 'TX', 'Austin'),
+(4, 'Initech Corp.', '
+654-321-0989', 'initech@example.com', '102 Corporate St', 'WA', 'Seattle'),
+(5, 'Umbrella Corp.', '098-765-4323', 'umbrella@example.com', '345 Corporate St', 'FL', 'Miami');
+
+
+INSERT INTO supply_order (order_id, supplier_id, order_date, shipment_date)
+VALUES
+(1, 1, '2023-04-01', '2023-04-05'),
+(2, 2, '2023-04-10', '2023-04-15'),
+(3, 3, '2023-04-20', '2023-04-25'),
+(4, 4, '2023-04-30', '2023-05-05'),
+(5, 5, '2023-05-10', '2023-05-15');
+
+
+INSERT INTO supply_order_product (order_id, product_id, order_price, item_count, item_price)
+VALUES
+(1, 1, 25.00, 100, 2.50),
+(2, 2, 8.00, 200, 0.04),
+(3, 3, 40.00, 50, 0.80),
+(4, 4, 15.00, 150, 0.10),
+(5, 5, 350.00, 20, 17.50);
+
+
+INSERT INTO customer_order (order_id, customer_id, order_price, order_date, shipment_date)
+VALUES
+(1, 1, 30.00, '2023-04-01', '2023-04-05'),
+(2, 2, 10.00, '2023-04-10', '2023-04-15'),
+(3, 3, 50.00, '2023-04-20', '2023-04-25'),
+(4, 4, 20.00, '2023-04-30', '2023-05-05'),
+(5, 5, 400.00, '2023-05-10', '2023-05-15');
+
+
+INSERT INTO customer_order_product (customer_id, product_id, item_count, item_price)
+VALUES
+(1, 1, 1, 30.00),
+(2, 2, 1, 10.00),
+(3, 3, 1, 50.00),
+(4, 4, 1, 20.00),
+(5, 5, 1, 400.00);
