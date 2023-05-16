@@ -1,59 +1,59 @@
 
 CREATE TABLE employee_role (
 	role_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
-	role_name TEXT NOT NULL,
+	role_name VARCHAR(64) NOT NULL,
 	wage FLOAT NOT NULL
 );
 
 CREATE TABLE employee (
 	employee_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
-	first_name TEXT NOT NULL,
-	last_name TEXT NOT NULL,
+	first_name VARCHAR(64) NOT NULL,
+	last_name VARCHAR(64) NOT NULL,
 	role_id INTEGER NOT NULL,
-	phone TEXT UNIQUE NOT NULL,
-	email TEXT UNIQUE NOT NULL,
-	address TEXT NOT NULL,
-	state TEXT NOT NULL,
-	city TEXT NOT NULL,
-	hire_date TEXT NOT NULL,
+	phone VARCHAR(32) UNIQUE NOT NULL,
+	email VARCHAR(256) UNIQUE NOT NULL,
+	address VARCHAR(64) NOT NULL,
+	state VARCHAR(64) NOT NULL,
+	city VARCHAR(64) NOT NULL,
+	hire_date VARCHAR(64) NOT NULL,
 	FOREIGN KEY(role_id)
 		REFERENCES employee_role(role_id)
 );
 
 CREATE TABLE customer (
 	customer_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
-	first_name TEXT NOT NULL,
-	last_name TEXT NOT NULL,
-	phone TEXT NOT NULL,
-	email TEXT UNIQUE NOT NULL,
-	address TEXT NOT NULL,
-	state TEXT NOT NULL,
-	city TEXT NOT NULL
+	first_name VARCHAR(64) NOT NULL,
+	last_name VARCHAR(64) NOT NULL,
+	phone VARCHAR(32) NOT NULL,
+	email VARCHAR(256) UNIQUE NOT NULL,
+	address VARCHAR(64) NOT NULL,
+	state VARCHAR(64) NOT NULL,
+	city VARCHAR(64) NOT NULL
 );
 
 CREATE TABLE product (
 	product_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
-	name TEXT NOT NULL,
-	description TEXT NOT NULL,
-	sale_price TEXT NOT NULL,
-	category TEXT NOT NULL
+	name VARCHAR(64) NOT NULL,
+	description VARCHAR(256) NOT NULL,
+	sale_price FLOAT NOT NULL,
+	category VARCHAR(64) NOT NULL
 );
 
 CREATE TABLE supplier (
 	supplier_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
-	name TEXT NOT NULL,
-	phone TEXT NOT NULL,
-	email TEXT NOT NULL,
-	address TEXT NOT NULL,
-	state TEXT NOT NULL,
-	city TEXT NOT NULL
+	name VARCHAR(64) NOT NULL,
+	phone VARCHAR(32) NOT NULL,
+	email VARCHAR(256) NOT NULL,
+	address VARCHAR(64) NOT NULL,
+	state VARCHAR(64) NOT NULL,
+	city VARCHAR(64) NOT NULL,
 );
 
 CREATE TABLE supply_order (
 	order_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
 	supplier_id INTEGER NOT NULL,
-	order_date TEXT NOT NULL,
-	shipment_date TEXT NOT NULL,
+	order_date VARCHAR(64) NOT NULL,
+	shipment_date VARCHAR(64) NOT NULL,
 	FOREIGN KEY(supplier_id)
 		REFERENCES supplier(supplier_id)
 );
@@ -74,8 +74,8 @@ CREATE TABLE customer_order (
 	order_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
 	customer_id INTEGER NOT NULL,
 	order_price FLOAT NOT NULL,
-	order_date TEXT NOT NULL,
-	shipment_date TEXT NOT NULL,
+	order_date VARCHAR(64) NOT NULL,
+	shipment_date VARCHAR(64) NOT NULL,
 	FOREIGN KEY(customer_id)
 		REFERENCES customer(customer_id)
 );
