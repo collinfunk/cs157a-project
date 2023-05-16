@@ -1,0 +1,79 @@
+﻿INSERT INTO employee_role (role_id, role_name, wage)
+VALUES
+(1, 'Store Manager', 50000.00),
+(2, 'Assistant Manager', 40000.00),
+(3, 'Lead Sales Associate', 30000.00),
+(4, 'Sales Associate', 25000.00),
+(5, 'Stock Clerk', 20000.00);
+
+
+INSERT INTO employee (employee_id, first_name, last_name, role_id, phone, email, address, state, city, hire_date)
+VALUES
+(1, 'John', 'Doe', 1, '1234567890', 'john.doe@example.com', '123 Main St', 'NY', 'New York', '2023-01-01'),
+(2, 'Jane', 'Doe', 2, '2345678901', 'jane.doe@example.com', '456 Park Ave', 'NY', 'New York', '2023-02-01'),
+(3, 'Jim', 'Smith', 3, '3456789012', 'jim.smith@example.com', '789 Broadway', 'NY', 'New York', '2023-03-01'),
+(4, 'Jill', 'Johnson', 4, '4567890123', 'jill.johnson@example.com', '1011 5th Ave', 'NY', 'New York', '2023-04-01'),
+(5, 'Joe', 'Brown', 5, '5678901234', 'joe.brown@example.com', '1213 Madison Ave', 'NY', 'New York', '2023-05-01');
+
+
+INSERT INTO customer (customer_id, first_name, last_name, phone, email, address, state, city)
+VALUES
+(1, 'Alice', 'White', '6789012345', 'alice.white@example.com', '1415 6th Ave', 'NY', 'New York'),
+(2, 'Bob', 'Black', '7890123456', 'bob.black@example.com', '1617 7th Ave', 'NY', 'New York'),
+(3, 'Charlie', 'Green', '8901234567', 'charlie.green@example.com', '1819 8th Ave', 'NY', 'New York'),
+(4, 'Diane', 'Blue', '9012345678', 'diane.blue@example.com', '2021 9th Ave', 'NY', 'New York'),
+(5, 'Eve', 'Red', '0123456789', 'eve.red@example.com', '2223 10th Ave', 'NY', 'New York');
+
+
+INSERT INTO product (product_id, name, description, sale_price, category)
+VALUES
+(1, 'TV', '42 inch 4K TV', '399.99', 'Electronics'),
+(2, 'Blender', 'High-speed blender', '99.99', 'Kitchen Appliances'),
+(3, 'Shoes', 'Running shoes', '79.99', 'Sportswear'),
+(4, 'T-Shirt', 'Cotton T-Shirt', '19.99', 'Clothing'),
+(5, 'Laptop', '15 inch laptop', '999.99', 'Electronics');
+
+
+INSERT INTO supplier (supplier_id, name, phone, email, address, state, city)
+VALUES
+(1, 'Electronics Inc.', '1234567890', 'supplier1@example.com', '123 Supplier St', 'NY', 'New York'),
+(2, 'Kitchen Supplies LLC', '2345678901', 'supplier2@example.com', '456 Supplier Ave', 'NY', 'New York'),
+(3, 'Sportswear Co.', '3456789012', 'supplier3@example.com', '789 Supplier Blvd', 'NY', 'New York'),
+(4, 'Clothing Corp.', '4567890123', 'supplier4@example.com', '1011 Supplier Ln', 'NY', 'New York'),
+(5, 'Tech Gadgets Ltd.', '5678901234', 'supplier5@example.com', '1213 Supplier Rd', 'NY', 'New York');
+
+
+INSERT INTO supply_order (order_id, supplier_id, order_date, shipment_date)
+VALUES
+(1, 1, '2023-05-01', '2023-05-03'),
+(2, 2, '2023-05-02', '2023-05-04'),
+(3, 3, '2023-05-03', '2023-05-05'),
+(4, 4, '2023-05-04', '2023-05-06'),
+(5, 5, '2023-05-05', '2023-05-07');
+
+
+INSERT INTO supply_order_product (order_id, product_id, order_price, item_count, item_price)
+VALUES
+(1, 1, 2000.00, 5, 400.00),
+(2, 2, 500.00, 5, 100.00),
+(3, 3, 400.00, 5, 80.00),
+(4, 4, 100.00, 5, 20.00),
+(5, 5, 5000.00, 5, 1000.00);
+
+
+INSERT INTO customer_order (order_id, customer_id, order_price, order_date, shipment_date)
+VALUES
+(1, 1, 399.99, '2023-05-06', '2023-05-08'),
+(2, 2, 99.99, '2023-05-07', '2023-05-09'),
+(3, 3, 79.99, '2023-05-08', '2023-05-10'),
+(4, 4, 19.99, '2023-05-09', '2023-05-11'),
+(5, 5, 999.99, '2023-05-10', '2023-05-12');
+
+
+INSERT INTO customer_order_product (customer_id, product_id, item_count, item_price)
+VALUES
+(1, 1, 1, 399.99),
+(2, 2, 1, 99.99),
+(3, 3, 1, 79.99),
+(4, 4, 1, 19.99),
+(5, 5, 1, 999.99);
