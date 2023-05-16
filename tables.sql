@@ -1,17 +1,24 @@
 
+CREATE TABLE employee_role (
+	role_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
+	role_name TEXT NOT NULL,
+	wage FLOAT NOT NULL
+);
+
 CREATE TABLE employee (
 	employee_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
 	first_name TEXT NOT NULL,
 	last_name TEXT NOT NULL,
-	role TEXT NOT NULL,
+	role_id INTEGER NOT NULL,
 	phone TEXT UNIQUE NOT NULL,
 	email TEXT UNIQUE NOT NULL,
 	address TEXT NOT NULL,
 	state TEXT NOT NULL,
 	city TEXT NOT NULL,
-	hire_date TEXT NOT NULL
+	hire_date TEXT NOT NULL,
+	FOREIGN KEY(role_id)
+		REFERENCES employee_role(role_id)
 );
-
 
 CREATE TABLE customer (
 	customer_id INTEGER PRIMARY KEY UNIQUE NOT NULL,
